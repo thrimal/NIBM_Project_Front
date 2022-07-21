@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { GoogleChartInterface, GoogleChartType } from 'ng2-google-charts';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

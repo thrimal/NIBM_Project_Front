@@ -1,0 +1,65 @@
+<div class="main-outer">
+  <div class="container">
+    <div class="row m-0 p-0">
+      <div class="left col-xl-6 col-lg-6 col-md-12 col-sm-12">
+        <div class="left-content">
+          <div class="left-header">
+            <img class="img" src="https://images.cdn3.stockunlimited.net/clipart450/check-button_1396977.jpg">
+            <h1 class="header">UI Checker</h1>
+          </div>
+          <div class="row-wrapper image-outer">
+            <div class="symbol">
+              <div
+                (mouseenter)="this.fileImageUploadHiddenEverything = '';this.fileImageOverlay = this.fileImageOverlayChecker"
+                (mouseleave)="this.fileImageUploadHiddenEverything = this.fileImageUploadHiddenEverythingChecker;this.fileImageOverlay = ''"
+                [ngStyle]="{'background-image': 'url('+ FileImageLink +')','background-size': 'cover','background-position':'center'}"
+                class="image-outer-background">
+                <div [ngStyle]="{'background-color':''+fileImageOverlay+''}" class="overlay">
+                  <input #fileUpload (change)="onFileSelected($event)"
+                         [ngStyle]="{'display' : ''+fileImageUploadHiddenEverything+''}"
+                         class="file-input" type="file">
+                  <div [ngStyle]="{'display' : ''+fileImageUploadHiddenEverything+''}" class="file-upload">
+                    {{fileName || "No file uploaded yet."}}
+                    <a (click)="fileUpload.click()" class="upload-btn" color="primary"
+                       mat-mini-fab>
+                      <mat-icon>attach_file</mat-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="button" mat-raised-button color="primary" (click)="onClick()">Start Process</button>
+        </div>
+      </div>
+      <div class="right col-xl-6 col-lg-6 col-md-12 col-sm-12">
+        <div class="right-content">
+          <div class="chart">
+            <google-chart [data]="pieChart"></google-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bottom " >
+        <div class="bottom-content">
+          <h3 class="sub-header">Suitable Colors</h3>
+          <div class="color-container" >
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
