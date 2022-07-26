@@ -22,6 +22,7 @@ export class TestComponent implements OnInit {
 
   }
   onFileSelected(event: any) {
+    this.FileImageLink="";
     console.log(event);
     let file: File = event.target.files[0];
     if (file) {
